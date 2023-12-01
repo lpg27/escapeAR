@@ -1,0 +1,104 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+body{
+	overflow: hidden;
+}
+#world{
+	position: relative;
+	width: 500px;
+	height: 500px;
+		margin: 200px auto;
+		perspective: 800px;
+	}
+#desk{
+	height:500px; 
+	width: 500px;
+	position: absolute;
+	transform: translateY(400px);
+}
+#mainDiv{
+	position: absolute;
+	height: 500px;
+	width: 500px;
+	transform: translateZ(600px);
+	transform-style: preserve-3d;
+}
+#mainDiv div{
+	position: absolute;
+	width: 500px; 
+	height: 500px;
+}
+
+#top{
+	background-image: url(sky.jpeg);
+	transform: rotateX(-90deg) translateY(-250px);;
+	transform-origin: top;
+}
+#topleft{
+	background-image: url(sky.jpeg);
+	height: 250px;
+	width: 500px;
+	transform: rotateY(90deg) translateX(-250px);
+	transform-origin: left;
+}
+#topright{
+	background-image: url(sky.jpeg);
+	height: 250px;
+	width: 500px;
+	transform: rotateY(90deg) translateX(250px);
+	transform-origin: right;
+}
+#topfront{
+	background-image: url(sky.jpeg);
+	height: 250px;
+	width: 500px;
+	transform: translateZ(250px);
+}
+#topback{
+	background-image: url(sky.jpeg);
+	height: 250px;
+	width: 500px;
+	transform: translateZ(-250px);
+}
+#bottom{
+	height: 500px;
+	width: 500px;
+	transform: rotateX(90deg) translateY(250px);
+	transform-origin: bottom;
+	background-image: url(grass.jpg);
+	background-size: 500px 500px;
+	
+	top: 250px;
+}
+#bottomleft{
+	background-image: url(sky.jpeg);
+	height: 250px;
+	width: 500px;
+	transform: rotateY(90deg) translateX(-250px);
+	transform-origin: left;
+	top: 250px;
+}
+#bottomright{
+	background-image: url(sky.jpeg);
+	height: 250px;
+	width: 500px;
+	transform: rotateY(90deg) translateX(250px);
+	transform-origin: right;
+	top: 250px;
+}
+#bottomfront{
+	background-image: url(sky.jpeg);
+	height: 250px;
+	width: 500px;
+	transform: translateZ(250px);
+	top: 250px;
+}
+#bottomback{
+	top: 250px;
+	background-image: url(sky.jpeg);
+	height: 250px;
+	width: 500px;
+	transform: translateZ(-250px);
+}
