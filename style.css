@@ -2,6 +2,18 @@ html {
   height: 100%;
   width: 100%;
 }
+#note{
+	height: 100px;
+	width: 60px;
+	background-color: white;
+	position: absolute;
+}
+#answer{
+	height: 100px;
+	width: 60px;
+	background-color: lightgray;
+	position: absolute;
+}
 body{
 	overflow: hidden;
 }
