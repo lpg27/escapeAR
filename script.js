@@ -1,4 +1,4 @@
-alert("Escape in 5 minutes, or you will meet your doom. Find the 16 digit code, and type it into the box to get out. Drag to move. Good luck!")
+alert("Escape in 5 minutes, or you will meet your doom. Find the 16 digit code, and type it into the box to get out. Click to allow VR. Good luck!")
 var code = "";
 for(let i = 0; i < 16; i++){
 	code += (Math.floor(Math.random()*10)).toString();
@@ -6,14 +6,6 @@ for(let i = 0; i < 16; i++){
     // feature detect
 
     function onclick() {
-
-					if ("ondeviceorientation" in window) {
-alert("Supported!");
-												window.addEventListener("deviceorientation", deviceOrientationEventHandler);
-					}
-					else {
-						alert("unsupported");
-					} document.getElementById('allow').hidden = true;
 					if (typeof DeviceOrientationEvent.requestPermission === 'function') {
 						DeviceOrientationEvent.requestPermission().then(function (permissionState) {
 							if (permissionState === 'granted') {
@@ -25,7 +17,7 @@ alert("Supported!");
 							.catch(console.error);
 					}
 				}
-document.body.addEventListener('click', onClick, false);
+document.body.addEventListener('click', onclick, false);
 function step2() {
 	speechSynthesis.speak(new SpeechSynthesisUtterance("Part 1 is: " + code.substring(0,4)));
 }
