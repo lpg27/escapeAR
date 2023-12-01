@@ -15,8 +15,6 @@
 
 	<div id="world">
 		<div id="mainDiv">
-			<audio id="codeone" src="Code1.m4a">
-			</audio>
 			<model-viewer onclick='step2();' id="retro" orientation="0 0 -90" src="scene.gltf" ios-src="scene.gltf" style="position: absolute;"></model-viewer>
 			<model-viewer onclick='step2();' id="desk" src="desk.glb" ios-src="scene.gltf" style="position: absolute;"></model-viewer>
 			<div id="top">				
@@ -35,7 +33,7 @@
 			</div>
 		</div>
 	</div>
-	<input onkeydown="check()" style="font-size: 30pt; z-ndex: 200" id="escape">
+	<input onkeydown="check()" style="font-size: 30pt; z-ndex: 200; position: absolute;" id="escape">
 		<script src="script.js"></script>
 </body>
 
