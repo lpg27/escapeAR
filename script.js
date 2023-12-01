@@ -15,18 +15,18 @@ function onClick() {
 						});
 document.body.addEventListener('click', onClick, false);
 function step2() {
-	window.speechSynthesis.speak("Part 1 is: " + code.substring(1,4));
+	window.speechSynthesis.speak(new SpeechSynthesisUtterance("Part 1 is: " + code.substring(1,4)));
 }
 document.getElementById("desk").onclick = ()=>{
-		window.speechSynthesis.speak("Part 2 is: " + code.substring(5,8));
+		window.speechSynthesis.speak(new SpeechSynthesisUtterance("Part 2 is: " + code.substring(5,8)));
 
 }
 document.getElementById("answer").onclick = ()=>{
-		window.speechSynthesis.speak("Part 3 is: " + code.substring(9,12))
+		window.speechSynthesis.speak(new SpeechSynthesisUtterance("Part 3 is: " + code.substring(9,12)))
 
 }
 document.getElementById("note").onclick = ()=>{
-		window.speechSynthesis.speak("Part 4 is: " + code.substring(13,16))
+		window.speechSynthesis.speak(new SpeechSynthesisUtterance("Part 4 is: " + code.substring(13,16)))
 
 }
 function check(e){
