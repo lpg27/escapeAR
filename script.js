@@ -1,4 +1,8 @@
 alert("Escape in 5 minutes, or you will meet your doom. Find the 16 digit code, and type it into the box to get out. Good luck!")
+var code = "";
+for(let i = 0; i < 16; i++){
+	code += (Math.floor(Math.random()*10)).toString();
+}
 function onClick() {
     // feature detect
 
@@ -11,5 +15,33 @@ function onClick() {
 						});
 document.body.addEventListener('click', onClick, false);
 function step2() {
-	document.getElementById('codeone').play();
+	window.speechSynthesis.speak(code.substring(1,4));
 }
+document.getElementById("desk").onclick = ()=>{
+		window.speechSynthesis.speak(code.substring(5,8));
+
+}
+function step4(){
+		window.speechSynthesis.speak(code.substring(9,12))
+
+}
+function step5(){
+		window.speechSynthesis.speak(code.substring(13,16))
+
+}
+function check(e){
+	if(e.key == "Enter"){
+		if(this.innerHTML = code){
+			alert("Great Job!");
+			window.open("", "_self").close();
+		}
+		else{
+			alert("Nice try. Better luck next time...");
+			location.reload();
+		}
+	}
+}
+setTimeout(()=> {
+	alert("Time's up! Nice try.");
+	location.reload();
+}, 300000)
