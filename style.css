@@ -2,6 +2,12 @@ html {
   height: 100%;
   width: 100%;
 }
+input{
+	position: absolute;
+	font-size: 30pt;
+	z-index: 20;
+	top: 80vh;
+}
 #note{
 	height: 100px;
 	width: 60px;
@@ -20,7 +26,7 @@ body{
 	overflow: hidden;
 }
 #world{
-	position: relative;
+	position: absolute;
 	width: 500px;
 	height: 500px;
 		margin: 200px auto;
