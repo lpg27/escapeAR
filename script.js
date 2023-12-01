@@ -16,7 +16,7 @@ for(let i = 0; i < 16; i++){
 						})
 							.catch(console.error);
 					}
-	    document.getElementById("mainDiv").addEventListener('click', onclick);
+	    document.getElementById("mainDiv").removeEventListener('click', onclick);
 
 				}
 document.getElementById("mainDiv").addEventListener('click', onclick, false);
