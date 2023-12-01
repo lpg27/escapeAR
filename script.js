@@ -31,7 +31,7 @@ document.getElementById("note").onclick = ()=>{
 }
 function check(e){
 	if(e.key == "Enter"){
-		if(this.innerHTML = code){
+		if(this.value === code){
 			alert("Great Job!");
 			window.open("", "_self").close();
 		}
