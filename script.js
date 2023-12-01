@@ -1,19 +1,14 @@
-  function onClick() {
+alert("Escape in 5 minutes, or you will meet your doom. Find the 16 digit code, and type it into the box to get out. Good luck!")
+function onClick() {
     // feature detect
-    if (typeof DeviceOrientationEvent.requestPermission === 'function') {
-      DeviceOrientationEvent.requestPermission()
-        .then(permissionState => {
-          if (permissionState === 'granted') {
-            window.addEventListener('deviceorientation', (e) => {
-							document.getElementById('mainDiv').style.transform = `translateZ(600px) rotateX(${e.beta}deg) rotateY(${e.gamma}deg) rotateZ(${e.alpha}deg)`;
+
+            window.addEventListener('drag', (e) => {
+							document.getElementById('mainDiv').style.transform = `translateZ(600px) rotateX(${-e.clientY}deg) rotateY(${e.clientX}deg)`;
 						});
-          }
-        });
-		}
+         
 		document.body.removeEventListener('click', onClick, false);
 	}
 document.body.addEventListener('click', onClick, false);
 function step2() {
 	document.getElementById('codeone').play();
-	document.getElementById("retro").style.display = "none";
 }
