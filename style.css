@@ -5,14 +5,16 @@ html {
 #note{
 	height: 100px;
 	width: 60px;
-	background-color: white;
+	background-color: black;
 	position: absolute;
+	z-index: 5;
 }
 #answer{
 	height: 100px;
 	width: 60px;
-	background-color: lightgray;
+	background-color: black;
 	position: absolute;
+	z-index: 5;
 }
 body{
 	overflow: hidden;
