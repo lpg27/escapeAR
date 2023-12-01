@@ -10,7 +10,7 @@ function onClick() {
          
 		document.body.removeEventListener('click', onClick, false);
 	}
-        window.addEventListener('drag', (e) => {
+        document.addEventListener('drag', (e) => {
 							document.getElementById('mainDiv').style.transform = `translateZ(600px) rotateX(${-e.clientY}deg) rotateY(${e.clientX}deg)`;
 						});
 document.body.addEventListener('click', onClick, false);
