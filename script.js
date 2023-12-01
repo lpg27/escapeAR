@@ -4,14 +4,27 @@ for(let i = 0; i < 16; i++){
 	code += (Math.floor(Math.random()*10)).toString();
 }
     // feature detect
-  window.addEventListener(
-    "deviceorientation",
-    (e) => {							
-	    document.getElementById('mainDiv').style.transform = `translateZ(600px) rotateX(${-e.clientY}deg) rotateY(${e.clientX}deg)`;
-    },
-    true,
-  );
-    
+
+    function onclick() {
+
+					if ("ondeviceorientation" in window) {
+alert("Supported!");
+												window.addEventListener("deviceorientation", deviceOrientationEventHandler);
+					}
+					else {
+						alert("unsupported");
+					} document.getElementById('allow').hidden = true;
+					if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+						DeviceOrientationEvent.requestPermission().then(function (permissionState) {
+							if (permissionState === 'granted') {
+								window.addEventListener('deviceorientation', function (e) {
+									document.getElementById("mainDiv").style.transform = `translateZ(600px) rotateZ(${e.alpha}deg) rotateX(${e.beta}deg) rotateY(${e.gamma}deg)`;
+								});
+							}
+						})
+							.catch(console.error);
+					}
+				}
 document.body.addEventListener('click', onClick, false);
 function step2() {
 	speechSynthesis.speak(new SpeechSynthesisUtterance("Part 1 is: " + code.substring(0,4)));
