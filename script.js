@@ -3,16 +3,15 @@ var code = "";
 for(let i = 0; i < 16; i++){
 	code += (Math.floor(Math.random()*10)).toString();
 }
-function onClick() {
     // feature detect
-
+  window.addEventListener(
+    "deviceorientation",
+    (e) => {							
+	    document.getElementById('mainDiv').style.transform = `translateZ(600px) rotateX(${-e.clientY}deg) rotateY(${e.clientX}deg)`;
+    },
+    true,
+  );
     
-         
-		document.body.removeEventListener('click', onClick, false);
-	}
-        document.addEventListener('drag', (e) => {
-							document.getElementById('mainDiv').style.transform = `translateZ(600px) rotateX(${-e.clientY}deg) rotateY(${e.clientX}deg)`;
-						});
 document.body.addEventListener('click', onClick, false);
 function step2() {
 	speechSynthesis.speak(new SpeechSynthesisUtterance("Part 1 is: " + code.substring(0,4)));
