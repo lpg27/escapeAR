@@ -16,8 +16,10 @@ for(let i = 0; i < 16; i++){
 						})
 							.catch(console.error);
 					}
+	    document.getElementById("mainDiv").addEventListener('click', onclick);
+
 				}
-document.body.addEventListener('click', onclick, false);
+document.getElementById("mainDiv").addEventListener('click', onclick, false);
 function step2() {
 	speechSynthesis.speak(new SpeechSynthesisUtterance("Part 1 is: " + code.substring(0,4)));
 }
