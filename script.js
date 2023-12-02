@@ -36,7 +36,7 @@ document.getElementById("note").onclick = ()=>{
 
 }
 document.getElementById("escape").onclick = ()=>{
-		if(this.value === code){
+		if(document.querySelector("input").value === code){
 			alert("Great Job!");
 			window.open("", "_self").close();
 		}
