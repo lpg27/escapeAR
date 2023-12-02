@@ -8,6 +8,13 @@ input{
 	z-index: 20;
 	top: 80vh;
 }
+#escape{
+	position: absolute;
+	font-size: 30pt;
+	z-index: 21;
+	top: 80vh;
+	left: 70vh
+}
 #note{
 	height: 100px;
 	width: 60px;
