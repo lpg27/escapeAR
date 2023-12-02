@@ -35,7 +35,7 @@ document.getElementById("note").onclick = ()=>{
 		speechSynthesis.speak(new SpeechSynthesisUtterance("Part 4 is: " + code.substring(12,16)));
 
 }
-document.getElementById("escape").onclick = (e)=>{
+document.getElementById("escape").onkeydown = (e)=>{
 	if(e.key == "Enter"){
 		if(this.value === code){
 			alert("Great Job!");
