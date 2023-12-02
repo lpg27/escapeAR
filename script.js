@@ -35,8 +35,7 @@ document.getElementById("note").onclick = ()=>{
 		speechSynthesis.speak(new SpeechSynthesisUtterance("Part 4 is: " + code.substring(12,16)));
 
 }
-document.getElementById("escape").onkeydown = (e)=>{
-	if(e.key == "Enter"){
+document.getElementById("escape").onclick = ()=>{
 		if(this.value === code){
 			alert("Great Job!");
 			window.open("", "_self").close();
@@ -45,7 +44,6 @@ document.getElementById("escape").onkeydown = (e)=>{
 			alert("Nice try. Better luck next time...");
 			location.reload();
 		}
-	}
 }
 setTimeout(()=> {
 	alert("Time's up! Nice try.");
