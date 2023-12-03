@@ -15,20 +15,7 @@ input{
 	top: 80vh;
 	left: 50vh;
 }
-#note{
-	height: 100px;
-	width: 60px;
-	background: gray;
-	position: absolute;
-	z-index: 5;
-}
-#answer{
-	height: 100px;
-	width: 60px;
-	background: gray;
-	position: absolute;
-	z-index: 5;
-}
+
 body{
 	overflow: hidden;
 }
@@ -128,4 +115,18 @@ body{
 	height: 250px;
 	width: 500px;
 	transform: translateZ(-250px);
+}
+#note{
+	height: 100px;
+	width: 60px;
+	background: gray;
+	position: absolute;
+	z-index: 5;
+}
+#answer{
+	height: 100px;
+	width: 60px;
+	background: gray;
+	position: absolute;
+	z-index: 5;
 }
