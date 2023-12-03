@@ -18,14 +18,14 @@ input{
 #note{
 	height: 100px;
 	width: 60px;
-	background-color: black;
+	background: gray;
 	position: absolute;
 	z-index: 5;
 }
 #answer{
 	height: 100px;
 	width: 60px;
-	background-color: black;
+	background: gray;
 	position: absolute;
 	z-index: 5;
 }
