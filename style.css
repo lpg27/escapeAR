@@ -20,7 +20,6 @@ body{
 	overflow: hidden;
 }
 #world{
-	transform-style: preserve-3d;
 	position: absolute;
 	width: 500px;
 	height: 500px;
