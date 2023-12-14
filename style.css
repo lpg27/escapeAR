@@ -11,9 +11,9 @@ input{
 #escape{
 	position: absolute;
 	font-size: 30pt;
-	z-index: 21;
+	z-index: 210;
 	top: 80vh;
-	left: 70vh;
+	left: 70vw;
 }
 
 body{
