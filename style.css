@@ -41,13 +41,11 @@ body{
 }
 #mainDiv div{
 	position: absolute;
-	width: 500px; 
-	height: 500px;
 }
 
 #top{
 	background-image: url(sky.jpeg);
-	transform: rotateX(-90deg) translateY(-250px);;
+	transform: rotateX(-90deg) translateY(-250px);
 	transform-origin: top;
 }
 #topleft{
