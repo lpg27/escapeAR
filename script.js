@@ -4,22 +4,9 @@ for(let i = 0; i < 16; i++){
 	code += (Math.floor(Math.random()*10)).toString();
 }
     // feature detect
-
-    function onclick() {
-					if (typeof DeviceOrientationEvent.requestPermission === 'function') {
-						DeviceOrientationEvent.requestPermission().then(function (permissionState) {
-							if (permissionState === 'granted') {
-								window.addEventListener('deviceorientation', function (e) {
-									document.getElementById("mainDiv").style.transform = `translateZ(600px) rotateZ(${e.alpha}deg) rotateX(${e.beta}deg) rotateY(${e.gamma}deg)`;
-								});
-							}
-						})
-							.catch(console.error);
-					}
-	    document.getElementById("mainDiv").removeEventListener('click', onclick);
-
-				}
-document.getElementById("mainDiv").addEventListener('click', onclick, false);
+document.addEventListener("drag", (e)=>{
+	document.getElementById("world").style.transform = "translateZ(600px) rotateX("+(-e.clientY)+"deg) rotateY("+e.clientX+"deg)"
+})
 function step2() {
 	speechSynthesis.speak(new SpeechSynthesisUtterance("Part 1 is: " + code.substring(0,4)));
 }
