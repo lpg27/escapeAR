@@ -1,19 +1,25 @@
-alert("Escape in 5 minutes, or you will meet your doom. Find the 16 digit code, and type it into the box to get out. Drag to move. Good luck!")
+alert("Escape in 5 minutes, or you will meet your doom. Find the 16 digit code, and type it into the box to get out. Click to allow VR. Good luck!")
 var code = "";
 for(let i = 0; i < 16; i++){
 	code += (Math.floor(Math.random()*10)).toString();
 }
-function onClick() {
     // feature detect
 
-    
-         
-		document.body.removeEventListener('click', onClick, false);
-	}
-        document.addEventListener('drag', (e) => {
-							document.getElementById('mainDiv').style.transform = `translateZ(600px) rotateX(${-e.clientY}deg) rotateY(${e.clientX}deg)`;
-						});
-document.body.addEventListener('click', onClick, false);
+    function onclick() {
+					if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+						DeviceOrientationEvent.requestPermission().then(function (permissionState) {
+							if (permissionState === 'granted') {
+								window.addEventListener('deviceorientation', function (e) {
+									document.getElementById("mainDiv").style.transform = `translateZ(600px) rotateZ(${e.alpha}deg) rotateX(${e.beta}deg) rotateY(${e.gamma}deg)`;
+								});
+							}
+						})
+							.catch(console.error);
+					}
+	    document.getElementById("mainDiv").removeEventListener('click', onclick);
+
+				}
+document.getElementById("mainDiv").addEventListener('click', onclick, false);
 function step2() {
 	speechSynthesis.speak(new SpeechSynthesisUtterance("Part 1 is: " + code.substring(0,4)));
 }
@@ -29,9 +35,8 @@ document.getElementById("note").onclick = ()=>{
 		speechSynthesis.speak(new SpeechSynthesisUtterance("Part 4 is: " + code.substring(12,16)));
 
 }
-function check(e){
-	if(e.key == "Enter"){
-		if(this.value === code){
+document.getElementById("escape").onclick = ()=>{
+		if(document.querySelector("input").value === code){
 			alert("Great Job!");
 			window.open("", "_self").close();
 		}
@@ -39,7 +44,6 @@ function check(e){
 			alert("Nice try. Better luck next time...");
 			location.reload();
 		}
-	}
 }
 setTimeout(()=> {
 	alert("Time's up! Nice try.");
