@@ -7,7 +7,7 @@ for(let i = 0; i < 16; i++){
 document.addEventListener("drag", (e)=>{
 	document.getElementById("mainDiv").style.transform = "translateZ(600px) rotateX("+(-e.clientY)+"deg) rotateY("+e.clientX+"deg)"
 })
-function step2() {
+document.getElementById("retro"). onclick = ()=> {
 	speechSynthesis.speak(new SpeechSynthesisUtterance("Part 1 is: " + code.substring(0,4)));
 }
 document.getElementById("desk").onclick = ()=>{
