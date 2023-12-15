@@ -127,6 +127,7 @@ body{
 	background: url("note.jpeg");
 	position: absolute;
 	z-index: 5;
+	left: 100px;
 }
 #answer{
 	height: 100px;
