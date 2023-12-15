@@ -15,8 +15,8 @@
 
 	<div id="world">
 		<div id="mainDiv">
-			<model-viewer onclick='step2();' id="retro" orientation="0 0 -90" src="scene.gltf" ios-src="scene.gltf" style="position: absolute;"></model-viewer>
-			<model-viewer onclick='step2();' id="desk" src="desk.glb" ios-src="scene.gltf" style="position: absolute;"></model-viewer>
+			<model-viewer id="retro" src="computer.usdz" camera-controls style="position: absolute;"></model-viewer>
+			<model-viewer id="desk" src="desk.glb" camera-controls style="position: absolute;"></model-viewer>
 			<div id="top">				
 				<div id="answer"></div>
 			</div>
@@ -33,7 +33,7 @@
 			</div>
 		</div>
 	</div>
-	<input placeholder="Enter the passcode" style="font-size: 30pt; z-ndex: 200; position: absolute;">
+	<input placeholder="Enter the passcode" style="font-size: 30pt; z-index: 200; position: absolute;">
 	<button id="escape">Escape!</button>
 		<script src="script.js"></script>
 </body>

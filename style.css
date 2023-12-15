@@ -11,9 +11,9 @@ input{
 #escape{
 	position: absolute;
 	font-size: 30pt;
-	z-index: 21;
+	z-index: 210;
 	top: 80vh;
-	left: 50vh;
+	left: 70vw;
 }
 
 body{
@@ -31,6 +31,13 @@ body{
 	width: 500px;
 	position: absolute;
 	transform: translateY(400px);
+	transform-style: preserve-3d;
+}
+#retro{
+	height:300px; 
+	width: 300px;
+	position: absolute;
+	transform-style: preserve-3d;
 }
 #mainDiv{
 	position: absolute;
