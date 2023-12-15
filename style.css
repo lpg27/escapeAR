@@ -31,13 +31,11 @@ body{
 	width: 300px;
 	position: absolute;
 	transform: translateY(400px);
-	transform-style: preserve-3d;
 }
 #retro{
 	height:300px; 
 	width: 300px;
 	position: absolute;
-	transform-style: preserve-3d;
 }
 #mainDiv{
 	position: absolute;
