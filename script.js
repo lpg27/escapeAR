@@ -22,6 +22,12 @@ document.getElementById("mainDiv").onclick = ()=> {
 								})
 								.catch(console.error);
 						} 
+	window.addEventListener('deviceorientation', (e) => {
+																 x = e.beta;
+																 y = e.gamma;
+																 z = e.alpha;
+												document.getElementById("mainDiv").style.transform = `translateZ(600px) rotateY(${y}deg) rotateX(${x}deg) rotateZ(${z}deg)`;
+															});
 
 }
 document.getElementById("retro"). onclick = ()=> {
