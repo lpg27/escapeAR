@@ -4,6 +4,7 @@ for(let i = 0; i < 16; i++){
 	code += (Math.floor(Math.random()*10)).toString();
 }
     // feature detect
+var x, y, z;
 document.getElementById("mainDiv").onclick = ()=> {
 	
 	 if (typeof DeviceOrientationEvent.requestPermission === 'function') {
