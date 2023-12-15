@@ -15,7 +15,7 @@ document.getElementById("mainDiv").onclick = ()=> {
 																 x = e.gamma;
 																 y = e.beta;
 																 z = e.alpha;
-												world.style.transform = `translateZ(600px) rotateY(${y}deg) rotateX(${x}deg) rotateZ(${z}deg)`;
+												document.getElementById("mainDiv").style.transform = `translateZ(600px) rotateY(${y}deg) rotateX(${x}deg) rotateZ(${z}deg)`;
 															});
 										
 									}
