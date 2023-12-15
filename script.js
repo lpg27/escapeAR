@@ -4,9 +4,17 @@ for(let i = 0; i < 16; i++){
 	code += (Math.floor(Math.random()*10)).toString();
 }
     // feature detect
-document.addEventListener("drag", (e)=>{
-	document.getElementById("mainDiv").style.transform = "translateZ(600px) rotateX("+(-e.clientY)+"deg) rotateY("+e.clientX+"deg)"
-})
+document.getElementById("mainDiv").onclick = ()=> {
+	navigator.permissions.query({ name: "deviceorientation" }).then((result) => {
+  if (result.state === "granted") {
+	  document.addEventListener("deviceorientation", (e)=> {
+		  document.getElementById("mainDiv").style.transform = "translateZ(600px) rotateZ("+ e.alpha+"deg) rotateX("+e.gamma+"deg) rotateY("+e.beta+"deg);"
+	  })
+  } else if (result.state === "prompt") {
+  }
+  // Don't do anything if the permission was denied.
+});
+}
 document.getElementById("retro"). onclick = ()=> {
 	speechSynthesis.speak(new SpeechSynthesisUtterance("Part 1 is: " + code.substring(0,4)));
 }
