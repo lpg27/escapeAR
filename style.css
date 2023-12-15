@@ -123,14 +123,14 @@ body{
 }
 #note{
 	height: 100px;
-	width: 60px;
+	width: 200px;
 	background: url("note.jpeg");
 	position: absolute;
 	z-index: 5;
 }
 #answer{
 	height: 100px;
-	width: 60px;
+	width: 200px;
 	background: url("note.jpeg");
 	position: absolute;
 	z-index: 5;
