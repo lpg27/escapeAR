@@ -10,7 +10,7 @@ document.getElementById("mainDiv").onclick = ()=> {
 							DeviceOrientationEvent.requestPermission()
 								.then(permissionState => {
 									if (permissionState === 'granted') {
-											window.addEventListener('deviceorientation' (e) => {
+											window.addEventListener('deviceorientation', (e) => {
 																 x = e.gamma;
 																 y = e.beta;
 																 z = e.alpha;
