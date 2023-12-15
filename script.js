@@ -6,9 +6,21 @@ for(let i = 0; i < 16; i++){
     // feature detect
 document.getElementById("mainDiv").onclick = ()=> {
 	
-	  document.addEventListener("deviceorientation", (e)=> {
-		  document.getElementById("mainDiv").style.transform = "translateZ(600px) rotateZ("+ e.alpha+"deg) rotateX("+e.gamma+"deg) rotateY("+e.beta+"deg);"
-	  })
+	 if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+							DeviceOrientationEvent.requestPermission()
+								.then(permissionState => {
+									if (permissionState === 'granted') {
+											window.addEventListener('deviceorientation' (e) => {
+																 x = e.gamma;
+																 y = e.beta;
+																 z = e.alpha;
+												world.style.transform = `translateZ(600px) rotateY(${y}deg) rotateX(${x}deg) rotateZ(${z}deg)`;
+															});
+										
+									}
+								})
+								.catch(console.error);
+						} 
 
 }
 document.getElementById("retro"). onclick = ()=> {
