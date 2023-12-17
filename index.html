@@ -49,7 +49,7 @@
 		function draw(){
 			 imageCapture
     .takePhoto()
-    .then((blob) => 
+    .then((blob) => {
 	    console.log(URL.createObjectURL(blob));
 	    document.body.style.backgroundImage = `url(${URL.createObjectURL(blob)})`;
 					setTimeout(draw, 1000/60)
