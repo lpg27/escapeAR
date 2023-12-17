@@ -23,6 +23,7 @@ input{
 
 body{
 	overflow: hidden;
+	background-size: 100vw 100vh;
 }
 #world{
 	position: absolute;
