@@ -12,7 +12,17 @@
 </head>
 
 <body>
-
+	<style>
+		div{
+			opacity: 0.3;
+		}
+		video{
+			height: 100vh;
+			width: 100vw;
+			position: absolute;
+		}
+	</style>
+	<video id="vid" autoplay></video>
 	<div id="world">
 		<div id="mainDiv">
 			<model-viewer id="desk" src="desk.glb" camera-controls style="position: absolute;"></model-viewer>
@@ -35,6 +45,13 @@
 	<input placeholder="Enter the passcode" style="font-size: 30pt; z-index: 200; position: absolute;">
 	<button id="escape">Escape!</button>
 		<script src="script.js?v=1"></script>
+	<script>
+		navigator.mediaDevices.getUserMedia({video: { facingMode: 'environment'}, audio: false}).then(function(video){
+					var b = new Blob([video], {type: "video/mp4"});
+					      document.getElementById("vid").srcObject = video; 
+				});
+					
+	</script>
 </body>
 
 </html>
