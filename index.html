@@ -44,16 +44,16 @@
 		navigator.mediaDevices.getUserMedia({video: { facingMode: 'environment'}, audio: false}).then(function(video){
 					 b = video.getVideoTracks()[0];
 			imageCapture = new ImageCapture(b);
-					setTimeout(draw, 1000/60)
+					setTimeout(draw, 1000/30)
 							});
 		function draw(){
 			 imageCapture
     .takePhoto()
     .then((blob) => {
-	    console.log(URL.createObjectURL(blob));
-	    ctx.drawImage(URL.createObjectURL(blob), 0, 0);
+	    console.log(blob);
+	    document.body.style.backgroundImage = `url(${URL.createObjectURL(blob)})`
 	    
-					setTimeout(draw, 1000/60)
+					setTimeout(draw, 1000/30)
     })
     .catch((error) => console.error(error));
 			
