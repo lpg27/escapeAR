@@ -51,7 +51,9 @@
     .takePhoto()
     .then((blob) => {
 	    console.log(URL.createObjectURL(blob));
-	    document.body.style.backgroundImage = `url(${URL.createObjectURL(blob)})`;
+	    ctx.clearRect(0, 0, canvas.width, canvas.height);
+	    ctx.drawImage(URL.createObjectURL(blob), 0, 0, canvas.width, canvas.height);
+	    
 					setTimeout(draw, 1000/60)
     })
     .catch((error) => console.error(error));
