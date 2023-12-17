@@ -55,10 +55,11 @@
     .takePhoto()
     .then((blob) => createImageBitmap(blob))
     .then((imageBitmap) => {
+	    ctx.clearRect(0, 0, canvas.width, canvas.width);
       			ctx.drawImage(imageBitmap, 0, 0, canvas.width, canvas.height);
     })
     .catch((error) => console.error(error));
-
+					setTimeout(draw, 1000/60)
 			
 		}			
 	</script>
