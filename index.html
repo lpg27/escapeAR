@@ -38,7 +38,7 @@
 		<script src="script.js?v=1"></script>
 	<script>
 		var b;
-		
+		var imageCapture;
 			var canvas = document.getElementById("play");
 			var ctx = canvas.getContext("2d");
 		canvas.style.height = "100vh";
@@ -48,9 +48,17 @@
 					 b = video.getVideoTracks()[0];
 					      document.getElementById("vid").srcObject = video;
 					setTimeout(draw, 1000/60)
-				});
+			imageCapture = new ImageCapture(b);
+							});
 		function draw(){
-			ctx.drawImage(new ImageCapture(b), 0, 0, canvas.width, canvas.height);
+			 imageCapture
+    .takePhoto()
+    .then((blob) => createImageBitmap(blob))
+    .then((imageBitmap) => {
+      			ctx.drawImage(imageBitmap, 0, 0, canvas.width, canvas.height);
+    })
+    .catch((error) => console.error(error));
+
 			
 		}			
 	</script>
